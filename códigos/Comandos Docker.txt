@@ -1,0 +1,79 @@
+#################### Criar o Hello World ####################
+
+#Baixando a imagem do Docker hub
+docker pull hello-world
+
+#Verificando as imagens
+docker images
+
+#Criando o container
+docker run hello-world
+
+#Verificando os containers em execução
+docker ps
+
+#Verificando todos os containers
+docker ps -a
+
+#Iniciando o container
+docker start ID ou NAME
+
+#Parando o container
+docker stop ID ou NAME
+
+#Removendo a imagem
+docker rmi ID ou NAME
+
+#Removendo o container
+docker rm ID ou NAME
+
+
+
+
+#################### Comandos Docker Container ####################
+
+#Verificar informações de um container
+docker inspect ID ou NAME
+
+#Verificando logs de um container
+docker container logs ID ou NAME
+
+#Verificando processos do container
+docker container top ID ou NAME
+
+#Verificando recursos em uso
+docker stats ID ou NAME
+
+#Update de recursos
+docker update ID ou NAME –m 256M --cpus 0.2
+
+
+
+
+#################### Criar uma Imagem ####################
+
+#Criar o container com todos os requisitos para rodar a aplicação.
+docker run -dti -p 8080:80 nginx
+
+#Criar a imagem a partir do container existente.
+docker commit ID ou NAME USERNAME/minha-primeira-imagem:1.0
+
+#Inicializar um novo container a partir na imagem criada.
+docker run -dti -p 8080:80 USERNAME/minha-primeira-imagem:1.0
+
+#Faça login.
+docker login --username=USERNAME
+
+#Execute o push da imagem.
+docker push USERNAME/minha-primeira-image:v1.0
+
+
+
+
+#################### Criar um Container com o Ubuntu ####################
+
+# Criando nosso container
+docker run -dti --name Ubuntu-Estudo -p 8000:8000 -p 8001:8001 -m 8G --cpus 0.5 ubuntu
+
+# Acessando  o container
+docker exec -ti Ubuntu-Estudo /bin/bash
