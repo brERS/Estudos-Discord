@@ -90,7 +90,3 @@
     "git.confirmSync": false,
     "explorer.compactFolders": false
 }
-
-
-git config --global user.email "edgar_reis_silva@hotmail.com"
-git config --global user.name "brERS"
